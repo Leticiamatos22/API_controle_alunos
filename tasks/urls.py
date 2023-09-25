@@ -1,5 +1,5 @@
 from django.urls import path
-from tasks.views import TaskList, TaskDetail,AlunoList, AlunoDetail, DisciplinaList, DisciplinaDetail 
+from tasks.views import TaskList, TaskDetail,AlunoList, AlunoDetail, DisciplinaList, DisciplinaDetail, AlunoTasksView
 
 urlpatterns = [
     path('tasks/', TaskList.as_view(), name='task-list'),
@@ -8,4 +8,5 @@ urlpatterns = [
     path('aluno/<int:pk>/', AlunoDetail.as_view(), name='task-detail'),
     path('disciplina/', DisciplinaList.as_view(), name='task-list'),
     path('disciplina/<int:pk>/', DisciplinaDetail.as_view(), name='task-detail'),
+    path('aluno/<int:pk>/tasks',AlunoTasksView.as_view(), name='aluno-tasks-list')
 ]
